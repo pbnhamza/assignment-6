@@ -25,8 +25,8 @@
     <header>
       <!-- Navbar section -->
       <section class="max-w-[1920px] mx-auto">
-        <nav class="">
-          <div class="navbar bg-[#15803D] shadow-sm py-6 md:px-[135px]">
+        <nav class="navbar fixed z-50 bg-[#15803D] shadow-sm md:px-[135px]">
+          <div class="navbar">
             <div class="navbar-start">
               <div class="dropdown">
                 <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -83,7 +83,7 @@
         </nav>
       </section>
       <!-- banner Section -->
-      <section class="max-w-[1920px] mx-auto">
+      <section class="max-w-[1920px] mx-auto pt-20">
         <div class="flex items-center justify-between bg-[#cff0dc]">
           <div class="flex-1 hidden sm:block">
             <img class="" src="./assets/hero-leaf1.png" alt="" />
@@ -118,76 +118,72 @@
             Choose Your Trees
           </h1>
         </div>
-        <section
-          class="flex flex-col md:flex-row justify-center gap-[30px] md:mx-[135px]"
-        >
+        <section class="flex flex-col md:flex-row gap-[30px] md:mx-[135px]">
           <!-- category button -->
-          <div class="">
-            <div class="text-center">
+          <div class="md:w-1/6 mx-auto">
+            <div class="w-full">
               <h1 class="font-semibold text-xl text-left pb-4 text-[#000000]">
                 Categories
               </h1>
               <!-- category button container -->
-              <div class="w-[250px]">
+              <div class="flex md:flex-col sm:flex-row">
                 <div
                   id="category-container"
-                  class="flex flex-col space-y-1 rounded w-full"
+                  class="flex flex-col space-y-1 rounded w-full text-left"
                 ></div>
               </div>
             </div>
           </div>
 
           <!-- card section -->
-          <div class="relative">
+          <div class="relative flex-1">
             <!-- card container -->
             <div
               id="card-container"
-              class="grid grid-cols-1 md:grid-cols-3 gap-[30px] md:min-w-full"
+              class="grid grid-cols-1 md:grid-cols-3 gap-[30px]"
             ></div>
           </div>
 
           <!-- chart section -->
-          <div class="col-span-2">
+          <div class="md:w-1/6">
             <div class="p-3 rounded-2xl bg-[#ffffff]">
               <h1 class="font-semibold text-xl text-left pb-4 text-[#000000]">
                 Your Cart
               </h1>
               <!-- Cart container -->
-              <div class="p-4 md:w-[250px]">
-                <div
-                  class="w-full flex justify-between items-center py-2 px-3 rounded-lg bg-[#f0fdf4]"
-                >
-                  <div class="space-y-1">
-                    <h1 class="text-sm font-semibold text-[#1f2937]">
-                      Mango Tree
-                    </h1>
-                    <p class="text-sm font-normal text-gray-500">
-                      ৳ <span id="taka">500</span> X <span id="count">1</span>
-                    </p>
-                  </div>
-                  <div>
-                    <button
-                      id="remove"
-                      class="font-xl text-gray-500 p-1 w-4 h-4"
-                    >
-                      X
-                    </button>
-                  </div>
-                </div>
-                <div
-                  class="flex justify-between items-center space-y-2 border-gray-300 border-t-2 pt-2"
-                >
-                  <h1 class="text-sm font-semibold text-[#1f2937]">Total</h1>
-                  <h1 class="text-sm font-semibold text-[#1f2937]">
-                    ৳<span id="total">1000</span>
-                  </h1>
-                </div>
+              <div id="cart-container" class="p-4 gap-3 w-full"></div>
+              <div
+                class="flex justify-between items-center space-y-2 border-gray-300 border-t-2 pt-2 w-full"
+              >
+                <h1 class="text-sm font-semibold text-[#1f2937]">Total</h1>
+                <h1 class="text-sm font-semibold text-[#1f2937]">
+                  <span>৳</span>
+                  <span id="total-taka">0</span>
+                </h1>
               </div>
             </div>
           </div>
         </section>
       </section>
-
+      <!-- modal section -->
+      <section>
+        <!-- Open the modal using ID.showModal() method -->
+        <!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
+        <dialog
+          id="plant_modal"
+          class="modal modal-bottom sm:modal-middle object-cover"
+        >
+          <div class="modal-box shadow-sm">
+            <div id="details-container" class="bg-base-100 p-2 space-y-2"></div>
+            <div class="modal-action">
+              <form method="dialog">
+                <!-- if there is a button in form, it will close the modal -->
+                <button class="btn">Close</button>
+              </form>
+            </div>
+          </div>
+        </dialog>
+      </section>
       <!-- About Campaign -->
       <section>
         <div class="bg-[#f0fdf4] py-24">
@@ -230,7 +226,7 @@
             class="flex justify-between gap-[50px] flex-col lg:flex-row mx-[135px]"
           >
             <button
-              class="px-10 py-10 badge-card cursor-pointer button-hover w-full"
+              class="px-10 py-10 badge-card cursor-pointer button-hover w-full object-fill"
             >
               <span class="h-[76px]">
                 <h1 class="text-[#15803d] text-[32px] font-semibold">500K+</h1>
