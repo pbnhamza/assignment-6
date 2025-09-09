@@ -41,14 +41,6 @@ const displayCategories = (categories) => {
   });
 };
 
-// lodeSpin
-const lodeSpin = () => {
-  const loadSpine = document.getElementById("card-container");
-  loadSpine.innerHTML = `
-  <div class=" absolute top-[-50px] left-[450px] ">
-    <span class=" loading loading-dots loading-xl  w-[50px] h-[50px]"></span>
-  </div>`;
-};
 // Get 🌴plants by categories
 const loadCategoriesPlants = (categoryId) => {
   console.log(categoryId);
@@ -219,6 +211,14 @@ const handleDelete = (cartId) => {
   allCarts = filterCart;
 
   showCart(allCarts);
+};
+// lodeSpin
+const lodeSpin = () => {
+  const loadSpine = document.getElementById("card-container");
+  loadSpine.innerHTML = `
+  <div class=" absolute top-[-50px] left-[450px] ">
+    <span class=" loading loading-dots loading-xl  w-[50px] h-[50px]"></span>
+  </div>`;
 };
 loadCategories();
 loadPlants();
