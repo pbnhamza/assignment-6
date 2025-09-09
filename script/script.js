@@ -150,7 +150,7 @@ const displayModalPlants = (plants) => {
   `;
   document.getElementById("plant_modal").showModal();
 };
-//cart
+//cart details
 let allCarts = [];
 const cardContainer = document.getElementById("card-container");
 const cartContainer = document.getElementById("cart-container");
